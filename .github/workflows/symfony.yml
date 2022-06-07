@@ -43,9 +43,9 @@ jobs:
         mkdir -p data
         touch data/database.sqlite
     - name: Tar files
-      run: ls -la  && tar -czvf my_files-$(date '%Y-%m-%d').tar . 
+      run: tar -zvcf myfiles-$(date +"%Y-%m-%d").tar.gz  --exclude="./.git"  --exclude="./node_modules" --exclude="./var" --exclude="./.github" --exclude="*.json" --exclude="*.lock" --exclude="*.tar.gz" --exclude="*.js" .
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: my_files.tar
+        path: myfiles-$(date +"%Y-%m-%d").tar.gz
