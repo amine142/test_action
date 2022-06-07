@@ -43,7 +43,7 @@ jobs:
         mkdir -p data
         touch data/database.sqlite
     - name: Tar files
-      run: ls -la  && tar -cxvf my_files-$(date '%Y-%m-%d').tar . 
+      run: ls -la  && tar -czvf my_files-$(date '%Y-%m-%d').tar . 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
