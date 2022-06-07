@@ -1,0 +1,9 @@
+.pagerContainer nav {
+    display: flex;
+    justify-content: center;
+    .dotText {
+        text-align: center;
+        min-width: 1.5rem;
+        justify-content: center;
+    }
+}

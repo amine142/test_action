@@ -1,0 +1,160 @@
+.col-filters {
+    border-right: 1px solid var(--border-default-grey);
+
+    @media screen and (max-width:#{$MEDIUM-MAX}) {
+        border-right: 0;
+    }
+
+    .fr-sidemenu {
+        margin: 0 -0.75rem;
+        padding: 0 0 0 0.75rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        @media screen and (max-width:#{$MEDIUM-MAX}) {
+            margin: 0;
+            padding: 0 0.75rem;
+        }
+    }
+
+    .fr-sidemenu__inner {
+        padding-bottom: 1rem;
+        overflow-x: inherit;
+        overflow-y: auto;
+
+        @media screen and (max-width:#{$MEDIUM-MAX}) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .fr-accordion {
+            margin: 0 -1rem;
+            min-height: 3rem;
+
+            &::before {
+                box-shadow: 0 1px 0 0 var(--border-default-grey);
+            }
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                margin: 0 -0.75rem;
+            }
+
+            .fr-accordion__title {
+                padding: 0 1rem;
+            }
+
+            .fr-accordion__btn {
+                min-height: 2rem;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                color: var(--text-action-high-blue-france);
+                flex-direction: column;
+                align-items: normal;
+                position: relative;
+                &-subtitle {
+                    display: block;
+                    font-size: 0.75rem;
+                    font-weight: normal;
+                    color: var(--text-mention-grey);
+                }
+                legend {
+                    color: var(--text-action-high-blue-france);
+                    font-weight: normal;
+                }
+                &[aria-expanded='true'] legend {
+                    font-weight: bold;
+                }
+                &:before {
+                    position: absolute;
+                    right: 0;
+                    top: 1rem;
+                }
+            }
+
+            .fr-collapse {
+                padding-left: 1.3rem;
+                padding-right: 1.3rem;
+                &:not(.fr-collapse--expanded) {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+                @media screen and (max-width:#{$MEDIUM-MAX}) {
+                    margin: 0 -0.25rem;
+                }
+            }
+        }
+    }
+
+    .filter-reset {
+        display: none;
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    .fr-btns-group {
+        margin-top: auto;
+        margin-bottom: 36px;
+    }
+
+    .filter-title {
+        margin-top: 2rem;
+
+        @media screen and (max-width:#{$MEDIUM-MAX}) {
+            display: flex;
+            justify-content: space-between;
+            font-weight: normal !important;
+            font-size: 0.875rem !important;
+            margin: 0.75rem 0 !important;
+        }
+    }
+
+    .filter-label {
+        display: flex;
+        align-items: center;
+    }
+
+    .filter-close {
+        cursor: pointer;
+        min-height: 2rem;
+    }
+
+    .filter-separator {
+        width: calc(100% + 2rem);
+        height: 1px;
+    }
+
+    &.active {
+        display: block !important;
+        &:before {
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 12;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .fr-sidemenu {
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                width: 100%;
+                height: 100vh;
+                max-height: 100%;
+                position: fixed;
+                top: 36px;
+                left: 0;
+                margin: 0;
+                z-index: 5000;
+                background-color: var(--w-bf500);
+                display: flex;
+                flex-flow: column nowrap;
+            }
+        }
+    }
+}

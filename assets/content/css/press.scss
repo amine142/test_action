@@ -1,0 +1,17 @@
+.press {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    ul {
+        color: var(--text-action-high-blue-france);
+    }
+    a {
+        color: var(--text-action-high-blue-france);
+        &.file:after {
+            display: none;
+        }
+        & + span {
+            color: var(--text-default-grey);
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,384 @@
+.leaflet-popup-pane {
+    display: none !important;
+}
+
+.franceMap {
+    position: relative;
+    .fr-radio-group {
+        display: none;
+    }
+    .mapGlobal {
+        width: 100%;
+        height: 419px;
+        @media screen and (max-width:#{$MEDIUM-MAX}) {
+            height: 465px;
+        }
+    }
+}
+
+#backToMetropolitan {
+    background-color: var(--background-default-grey);
+    position: absolute;
+    z-index: 3000;
+    top: 0;
+    align-items: center;
+    display: none;
+    border: 1px solid var(--border-action-high-blue-france);
+    label {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        height: 100%;
+        color: var(--text-label-blue-france);
+        &:before {
+            display: none;
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                display: inline-block;
+                margin-right: 0.75rem;
+                margin-top: 0;
+            }
+        }
+    }
+    &.onClickMap {
+        display: flex;
+    }
+    &:hover,
+    &:active {
+        label {
+            background-color: transparent;
+        }
+    }
+    img.backPicto {
+        max-height: 16px;
+        vertical-align: middle;
+        filter: invert(13%) sepia(50%) saturate(6886%) hue-rotate(241deg)
+            brightness(71%) contrast(137%);
+    }
+    img.backPictoFrance {
+        max-width: 80px;
+        max-height: 80px;
+        position: absolute;
+        right: 0;
+        padding-left: 4px;
+        padding-right: 3px;
+        box-sizing: content-box;
+        box-shadow: -1px 0 0 0 #e5e5e5;
+    }
+    @media screen and (max-width:#{$MEDIUM-MAX}) {
+        position: static;
+        height: 88px;
+        border: 1px solid var(--border-default-grey);
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background: transparent;
+        margin-bottom: 17px;
+        label {
+            color: var(--text-label-grey);
+            flex-direction: row;
+        }
+        &:hover,
+        &:active {
+            background-image: none;
+        }
+    }
+}
+
+@media screen and (min-width:#{$MEDIUM-MAX}) {
+    .onClickMiniMap #backToMetropolitan {
+        display: none !important;
+    }
+}
+
+.mapP2R {
+    min-height: 420px;
+    position: relative;
+    .innerMapDomTom {
+        display: flex;
+        .mapParent {
+            display: inline-block;
+            width: 20%;
+            height: 99px;
+            position: relative;
+            cursor: pointer;
+            &:last-child {
+                margin-right: 0 !important;
+            }
+            &.onClickDROM {
+                pointer-events: none;
+                .mapGlobal {
+                    border: 1px solid var(--border-action-high-blue-france);
+                }
+            }
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                width: 100%;
+                height: 88px;
+                margin-bottom: 12px;
+                &.onClickDROM {
+                    .mapGlobal {
+                        border: 0;
+                    }
+                    .fr-radio-group {
+                        border-color: var(--border-action-high-blue-france);
+                    }
+                }
+            }
+        }
+        .mapGlobal {
+            height: 100%;
+            width: 100%;
+            & + .fr-radio-group {
+                position: absolute;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-end;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                padding-bottom: 4px;
+                @media screen and (max-width:#{$MEDIUM-MAX}) {
+                    justify-content: start;
+                    border: 1px solid var(--border-default-grey);
+                }
+            }
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                background: transparent;
+                height: 80px;
+                width: 80px;
+                position: absolute !important;
+                right: 4px;
+                top: 4px;
+                border-left: 4px solid transparent;
+                box-shadow: -1px 0px 0px 0px #e5e5e5;
+                box-sizing: content-box;
+                &:before {
+                    margin-left: 4px;
+                    border-left: 1px solid var(--border-default-grey);
+                    display: block;
+                    width: 1px;
+                    height: 100%;
+                    content: '';
+                }
+            }
+            &.onClickMiniMap {
+                pointer-events: none;
+                .groupMarker {
+                    pointer-events: none;
+                }
+            }
+            .groupMarker {
+                pointer-events: none;
+            }
+
+            .leaflet-control-attribution {
+                display: none;
+            }
+            img {
+                pointer-events: none;
+            }
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                .leaflet-pane {
+                    width: 200px;
+                    .leaflet-marker-icon {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .labelDomTom {
+            z-index: 3000;
+            display: inline;
+            font-family: Marianne, arial, sans-serif;
+            background-color: var(--background-default-grey);
+            padding: 4px;
+            margin-left: 4px;
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                font-weight: normal !important;
+                font-size: 1rem !important;
+                padding: 26px 0 26px 24px !important;
+                width: 100%;
+                background-color: transparent;
+            }
+            &:before {
+                display: none;
+                @media screen and (max-width:#{$MEDIUM-MAX}) {
+                    display: inline-block;
+                    margin-right: 0.75rem;
+                    position: static;
+                }
+            }
+        }
+        @media screen and (max-width:#{$MEDIUM-MAX}) {
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            background: var(--background-default-grey);
+            z-index: 4000;
+            width: 100%;
+            visibility: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            &.activeGeoloc {
+                visibility: visible;
+                height: 100%;
+                display: block;
+                overflow: auto;
+            }
+        }
+    }
+    .onClickMiniMap {
+        filter: brightness(0.7);
+        pointer-events: none;
+    }
+}
+
+//Slideshow
+#infoMapTile {
+    &.hidden {
+        display: none;
+    }
+    .fr-tile__link {
+        font-size: 12px !important;
+    }
+    .tile {
+        display: inline-block;
+        margin: 0 !important;
+        max-width: inherit;
+    }
+    .fr-card {
+        border: 0;
+        .fr-card__header {
+            height: 68px;
+        }
+        .fr-card__img {
+            width: 42px;
+            height: 42px;
+            border-width: 2px;
+        }
+        .fr-card__title {
+            margin-bottom: 0.25rem;
+        }
+        .fr-card__body {
+            padding-bottom: 3.5rem;
+        }
+        .fr-card__detail {
+            display: none;
+        }
+        .fr-card__region {
+            font-size: 12px !important;
+        }
+        .fr-card__link {
+            font-size: 12px;
+            color: var(--text-default-grey);
+        }
+
+        &:not(.fr-card--no-arrow) .fr-card__body:after {
+            content: none;
+        }
+    }
+    .fr-map-index {
+        position: absolute;
+        text-align: center;
+        color: var(--text-mention-grey);
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1.5rem;
+    }
+}
+
+.tns-outer {
+    z-index: 400;
+    position: absolute;
+    left: 44px;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-default-grey);
+    width: 15.5rem;
+    .tns-ovh {
+        overflow: hidden;
+        height: 40px;
+    }
+    .tns-liveregion {
+        display: none;
+    }
+    .tns-controls {
+        outline: none;
+        button {
+            z-index: 2;
+            border-radius: 50%;
+            display: flex;
+            width: 32px;
+            height: 32px;
+            color: var(--text-active-grey);
+            box-shadow: inset 0 0 0 1px var(--border-default-grey);
+            background-color: var(--background-default-grey);
+            justify-content: center;
+            align-items: center;
+            line-height: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            &:hover {
+                background-image: linear-gradient(
+                    0deg,
+                    hsla(0, 0%, 87.8%, 0.5),
+                    hsla(0, 0%, 87.8%, 0.5)
+                );
+            }
+            &:disabled {
+                display: none;
+            }
+            &:first-child {
+                left: -16px;
+            }
+            &:last-child {
+                right: -16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:#{$MEDIUM-MAX}) {
+    .mapInsert {
+        position: sticky;
+        top: -1px;
+        margin-top: -44px;
+        order: -1;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        &.activeGeoloc {
+            z-index: 1;
+        }
+    }
+    .leaflet-bar.leaflet-control {
+        margin-bottom: 4rem;
+    }
+    .backFranceClick {
+        border-color: var(--border-active-blue-france) !important;
+    }
+    .onClickMiniMap {
+        background: #ccc;
+        opacity: 0.4;
+        .fr-radio-group {
+            border: 0 !important;
+        }
+        .labelDomTom {
+            text-shadow: none !important;
+        }
+    }
+    .tns-outer {
+        left: 32px;
+        margin-bottom: 40px;
+    }
+    .blueClick {
+        .filter-geoloc {
+            color: var(--text-action-high-blue-france);
+            font-style: normal;
+        }
+        img {
+            filter: none;
+        }
+    }
+}

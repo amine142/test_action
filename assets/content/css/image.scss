@@ -1,0 +1,48 @@
+.fr-main-image {
+    left: calc(-50vw + 50%);
+    width: 100vw;
+    position: relative;
+    .fr-grid-row {
+        position: relative;
+        div {
+            height: 6rem;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .fr-content-media__img {
+        max-height: 34rem;
+    }
+    figcaption {
+        display: block;
+        text-align: left;
+        max-width: #{$WEBSITE-LARGE-MAX};
+        position: absolute;
+        bottom: -4.35rem;
+        height: 3.75rem;
+        @media screen and (max-width:#{$SMALL-MAX}) {
+            position: static;
+            height: auto;
+        }
+        span {
+            max-width: 12rem;
+            padding-right: 1rem;
+            display: block;
+            position: relative;
+            z-index: 2;
+            @media screen and (max-width:#{$LARGE-MAX}) {
+                padding-left: 1.5rem;
+            }
+            @media screen and (max-width:#{$MEDIUM-MAX}) {
+                padding-left: 1rem;
+            }
+            @media screen and (max-width:#{$SMALL-MAX}) {
+                max-width: none;
+            }
+        }
+    }
+}
+// Make all content in grid front of image. Not set if main image is not to be.
+.fr-grid-row {
+    position: relative;
+}

@@ -1,0 +1,16 @@
+.fr-recents-articles {
+    ul {
+        list-style-type: none;
+        li > span {
+            display: block;
+            span {
+                position: relative;
+                &:after {
+                    content: '·';
+                    position: absolute;
+                    right: -0.5rem;
+                }
+            }
+        }
+    }
+}

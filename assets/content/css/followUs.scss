@@ -1,0 +1,19 @@
+.fr-follow-us {
+    .fr-btns-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+
+        @media screen and (min-width:#{$SMALL-MAX}) {
+            grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+        }
+    }
+
+    [target='_blank']:after {
+        content: none;
+    }
+
+    [class^='fr-fi-']:before {
+        font-size: 1rem;
+    }
+}

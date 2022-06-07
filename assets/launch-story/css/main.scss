@@ -1,0 +1,63 @@
+@media print {
+    .sharedBlock,
+    .retour,
+    .videoCall,
+    .fr-plan,
+    .logoFranceRelance,
+    .col-filters,
+    #tarteaucitronAlertBig,
+    .fr-hflux,
+    #footer,
+    .pager,
+    .socialNetwork,
+    .mapInsert,
+    #map {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    .view h1,
+    .view .fr-titre {
+        min-height: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .fr-bloc-identity .fr-col {
+        padding-bottom: 0 !important;
+    }
+    .fr-bloc-identity #map + .fr-col {
+        padding-top: 0 !important;
+        padding-bottom: 1rem !important;
+    }
+    .filter .col-content {
+        border-left: 0 !important;
+    }
+}
+
+.mapGlobal {
+    width: 100%;
+    a.leaflet-popup-close-button {
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width:#{$MEDIUM-MAX}) {
+    .blockScroll {
+        body {
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+        }
+        .col-filters.active {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+.fr-container .socialNetwork {
+    z-index: 1;
+    background-color: var(--background-default-grey);
+    @media screen and (max-width: $MEDIUM-MAX) {
+        margin-right: -1rem;
+        margin-left: -1rem;
+        padding: 0 1rem;
+    }
+}

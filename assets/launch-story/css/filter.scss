@@ -1,0 +1,342 @@
+.filter {
+    z-index: 3;
+    position: relative;
+
+    .thematics-tags {
+        li:last-child {
+            width: 100%;
+        }
+    }
+
+    .fr-tag.active {
+        background-color: var(--background-active-blue-france);
+        color: var(--text-inverted-grey);
+    }
+
+    .fr-accordion {
+        &::before {
+            box-shadow: 0 1px 0 0 var(--border-default-grey);
+        }
+    }
+    .fr-accordion__btn {
+        color: var(--text-action-high-blue-france);
+    }
+    .outline-color-load .fr-accordion__btn {
+        outline-color: var(--text-inverted-grey) !important;
+    }
+    #fr-accordion-state {
+        &.visible {
+            overflow: visible;
+        }
+        .state {
+            .fr-search-bar {
+                position: relative;
+                flex-wrap: wrap;
+                label {
+                    width: 100%;
+                    position: static;
+                    height: auto;
+                    margin: 0;
+                }
+                input,
+                button {
+                    flex: 1;
+                }
+                button + div {
+                    width: 100%;
+                }
+            }
+            .fr-autocomplete {
+                box-shadow: 0 1rem 1rem 0 rgb(0 0 0 / 10%),
+                    0 0.5rem 1rem -1rem rgb(0 0 0 / 32%);
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                background-color: var(--background-default-grey);
+                overflow-y: auto;
+                position: absolute;
+                width: 100%;
+                max-height: 220px;
+                top: 100%;
+                z-index: 3;
+                li {
+                    padding-bottom: 0;
+                    &:before {
+                        display: none;
+                    }
+                    border-bottom: 1px solid var(--border-default-grey);
+                    button {
+                        display: block;
+                        width: 100%;
+                        border-radius: 0;
+                        text-align: left;
+                    }
+                    &[aria-selected='true'] {
+                        background-color: var(--background-contrast-grey);
+                        outline: 2px solid $FOCUS-OUTLINE-COLOR;
+                        outline-offset: -2px;
+                    }
+                }
+            }
+        }
+        .fr-input-wrap {
+            &[class*=' fr-fi-']:before,
+            &[class^='fr-fi-']:before {
+                left: 0.75rem;
+                right: inherit;
+                pointer-events: none;
+            }
+
+            .fr-input {
+                padding-left: 2.5rem;
+                padding-right: 1rem;
+            }
+
+            &:before {
+                color: var(--text-action-high-grey);
+            }
+        }
+    }
+    .fr-label + .fr-input-wrap {
+        margin-top: 0.5rem;
+    }
+    .col-filters {
+        position: sticky;
+        top: -1px;
+        height: 100vh;
+        max-height: 100%;
+        overflow: auto;
+        z-index: 10;
+    }
+    .mobile-filters {
+        display: none;
+    }
+    .col-content {
+        border-left: 1px solid var(--border-default-grey);
+    }
+    .hideAutocomplete {
+        display: none;
+    }
+    .submitFilters {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width:#{$MEDIUM-MAX}) {
+    .filter {
+        z-index: 2501;
+        > .fr-grid-row {
+            display: block;
+        }
+
+        .fr-accordion {
+            margin: 0 -1rem;
+            padding: 0 1rem;
+
+            &.active {
+                .fr-accordion__btn {
+                    &:after {
+                        content: '';
+                        background: var(--text-action-high-grey);
+                        border-radius: 50%;
+                        width: 0.25rem;
+                        height: 0.25rem;
+                        margin-left: 0.1rem;
+                        margin-top: -0.75rem;
+                        order: -1;
+                    }
+
+                    &:before {
+                        order: -2;
+                    }
+                }
+            }
+        }
+
+        .col-filters {
+            padding-left: 0;
+            padding-right: 0;
+            height: 40px;
+            position: relative;
+            top: 20px;
+            &.active {
+                position: fixed !important;
+                background-color: var(--background-default-grey);
+                z-index: 5;
+                top: 0 !important;
+                left: 0;
+                height: 100vh;
+                display: flex;
+                flex-flow: column nowrap;
+                width: 100%;
+                max-width: inherit;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                .mobile-filters {
+                    box-shadow: none;
+                    border-bottom: 1px solid var(--border-default-grey);
+                    margin: 0 -1rem;
+                    border-radius: 0;
+                    padding-top: 16px !important;
+                    padding-bottom: 16px !important;
+                    width: 100vw;
+                    .fr-fi-filter-line {
+                        color: var(--text-action-high-grey);
+                    }
+                    .filter-opened {
+                        display: flex;
+                        &.text {
+                            color: var(--text-action-high-grey);
+                        }
+                    }
+                    .filter-closed {
+                        display: none;
+                    }
+                    .closeFilters {
+                        border-bottom: 1px solid
+                            var(--text-action-high-blue-france);
+                    }
+
+                    .mobile-filters--btn {
+                        &:nth-child(2) {
+                            border-left: none;
+                            padding-left: 0;
+                        }
+                        img {
+                            filter: brightness(0%);
+                        }
+                    }
+                    .openFilters {
+                        padding-left: 0 !important;
+                        margin-left: 0 !important;
+                    }
+                }
+
+                .filters-container,
+                .fr-btns-group {
+                    display: block;
+                }
+
+                .fr-btns-group {
+                    margin-top: auto;
+                }
+            }
+
+            .mobile-filters {
+                background-color: var(--background-default-grey);
+                display: flex;
+                margin: 0;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 20px;
+                transition: margin 0.1s;
+                width: 100%;
+                .mobile-filters--btn {
+                    color: var(--text-action-high-blue-france);
+                    cursor: pointer;
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.active {
+                        .filter-closed {
+                            align-items: center;
+                            position: relative;
+                            &:after {
+                                content: '';
+                                background: var(--text-action-high-blue-france);
+                                border-radius: 50%;
+                                width: 0.25rem;
+                                height: 0.25rem;
+                                margin-left: 0.1rem;
+                                margin-top: -0.75rem;
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        border-left: 1px solid var(--border-default-grey);
+                    }
+
+                    img {
+                        height: 1rem;
+                    }
+                }
+
+                .filter-opened {
+                    display: none;
+                }
+                .filter-closed {
+                    display: flex;
+                }
+                &.inactiveGeoloc {
+                    display: none;
+                }
+            }
+
+            h6,
+            .filters-container,
+            .fr-btns-group {
+                display: none;
+            }
+            &.is-pinned {
+                padding: 8px 0;
+                background: var(--background-default-grey);
+                box-shadow: 0 8px 16px 0 rgba(22, 22, 22, 0.12),
+                    0 8px 16px -16px rgba(22, 22, 22, 0.32);
+                max-width: none;
+                margin: 0 0 0 -1rem;
+                width: 100vw;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                position: sticky;
+                top: -1px;
+            }
+        }
+
+        .col-content {
+            border-left: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overflowMeasure {
+            overflow: visible;
+        }
+    }
+
+    .filterGeoloc {
+        border-bottom: 1px solid var(--border-default-grey);
+        margin: 0 -1rem;
+        .closeFilters {
+            float: right;
+            color: var(--text-action-high-blue-france);
+            box-shadow: 0 1px 0 0 currentColor;
+        }
+    }
+    .openLocalisation {
+        flex: 1;
+        img {
+            filter: contrast(0);
+        }
+    }
+    .filter-geoloc {
+        width: 100%;
+        color: var(--text-mention-grey);
+        font-style: italic;
+    }
+    .activeGeoloc {
+        .filter-geoloc {
+            color: var(--text-action-high-grey);
+            font-style: normal;
+        }
+        .openLocalisation img {
+            filter: brightness(0%);
+            height: 14px;
+            top: 1px;
+            position: relative;
+        }
+    }
+}

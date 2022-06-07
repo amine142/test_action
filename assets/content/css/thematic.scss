@@ -1,0 +1,42 @@
+.content-thematics {
+    display: flex;
+
+    .fr-breadcrumb__list {
+        transform: none;
+    }
+
+    .fr-breadcrumb__link {
+        margin-right: 0.75rem;
+        position: relative;
+        color: var(--text-action-high-blue-france);
+
+        &.content--type {
+            color: var(--text-default-grey);
+        }
+    }
+
+    .isDot {
+        &:after {
+            content: '·';
+            position: absolute;
+            right: -0.5rem;
+            top: 0.4rem;
+        }
+    }
+
+    .isArrow {
+        margin-right: 1.125rem;
+        &:after {
+            content: '>';
+            font-size: 0.875rem;
+            color: var(--grey-200-850);
+            position: absolute;
+            top: 0.4rem;
+            right: -0.85rem;
+        }
+    }
+    // Remove dot when it's the last thematic breadcrumb element
+    ol li:last-child li:last-child a:after {
+        display: none;
+    }
+}

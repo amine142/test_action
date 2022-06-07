@@ -1,0 +1,274 @@
+/* Progress bar */
+
+.sticky.progressParent {
+    position: fixed !important;
+    top: 0;
+    z-index: 9999;
+}
+
+.progressParent {
+    background: #ececec;
+    height: 5px;
+    width: 100%;
+    #progress {
+        background-color: #bec6c5;
+        height: 5px;
+        width: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.view {
+    .hidden {
+        display: none;
+    }
+    h1 {
+        color: var(--text-inverted-grey);
+        min-height: 144px;
+    }
+    .logoFranceRelance {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        img {
+            max-width: 150px;
+        }
+    }
+    .fr-titre {
+        background: #344f4b url(../../images/launch-story/biseau_triangle.png)
+            no-repeat right top 0 / 30%;
+        min-height: 220px;
+        .retour {
+            position: absolute;
+            z-index: 1;
+            img {
+                max-height: 16px;
+                filter: brightness(0) invert(1);
+            }
+        }
+        a,
+        .date {
+            color: var(--text-inverted-grey);
+            display: inline-block;
+        }
+        .pipe {
+            color: var(--text-inverted-grey);
+        }
+        .fr-content-media__img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #fff;
+        }
+        .fr-hflux {
+            position: absolute;
+            bottom: -122px;
+            left: 0;
+            img {
+                z-index: 1;
+            }
+        }
+        .relative {
+            position: relative;
+        }
+    }
+    .info {
+        position: relative;
+        top: 0;
+    }
+    .detail {
+        background: var(--background-default-grey);
+    }
+    .fr-mesure h4 a {
+        justify-content: center;
+    }
+    .fr-info span {
+        display: block;
+    }
+    .tag-leader-paragraph {
+        line-height: 1.6em !important;
+    }
+    .fr-mesure p,
+    .fr-mesure a,
+    .fr-mesure {
+        text-align: center;
+        justify-content: center;
+    }
+    .fr-callout {
+        &.fr-plan {
+            box-shadow: none;
+        }
+        ul.leaderboard {
+            li {
+                display: flex;
+                flex: 0 0 50%;
+                @media screen and (max-width: $SMALL-MAX) {
+                    width: 100%;
+                    flex: none;
+                }
+                a {
+                    display: flex;
+                    justify-content: center;
+                }
+                &:first-child a,
+                &:nth-child(3) a {
+                    margin-right: 10px;
+                    @media screen and (max-width: $SMALL-MAX) {
+                        margin-right: 0;
+                    }
+                }
+                &:nth-child(2) a,
+                &:last-child a {
+                    margin-left: 10px;
+                    @media screen and (max-width: $SMALL-MAX) {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .view-inner {
+        flex-direction: row-reverse;
+        position: relative;
+    }
+    .fr-grid-row .fr-card {
+        height: auto;
+    }
+    .fr-bloc-identity {
+        background-color: var(--background-contrast-grey);
+    }
+    .fr-view {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: $MEDIUM-MAX) {
+    .view {
+        .fr-view .fr-bloc-identity {
+            &:first-child {
+                .isImage {
+                    padding-top: 110px;
+                }
+            }
+        }
+        .fr-titre {
+            background-size: cover;
+            .date {
+                margin: 20px 0;
+            }
+        }
+        .fr-view {
+            margin-top: 20px;
+        }
+        #fr-mySpace {
+            .fr-hflux {
+                left: 20px;
+                bottom: -180px;
+                .fr-content-media {
+                    align-items: flex-start;
+                }
+                .fr-content-media__img {
+                    width: 130px;
+                    height: 130px;
+                    border: 2px solid #fff;
+                }
+            }
+            .info {
+                padding-top: 0;
+                padding-bottom: 0 !important;
+            }
+            .detail {
+                padding-top: 3rem !important;
+            }
+            .retour {
+                position: static;
+            }
+            .backgroundBH .fr-container {
+                padding-bottom: 60px;
+            }
+            .pipe {
+                display: none;
+            }
+            .logoFranceRelance {
+                margin: 0 auto 20px;
+                img {
+                    max-width: 80px;
+                }
+            }
+        }
+    }
+}
+
+.tag-uppercase {
+    text-transform: capitalize;
+}
+
+.mapGlobal {
+    height: 300px;
+    width: 100%;
+    .leaflet-marker-pane {
+        img {
+            pointer-events: none;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 2px 4px 8px #aaa;
+            margin-top: -44px !important;
+        }
+    }
+    .leaflet-shadow-pane {
+        z-index: 700;
+    }
+}
+
+.fr-responsive-vid:before {
+    display: none;
+}
+
+.rf-responsive-vid__player {
+    width: 100%;
+    height: 300px;
+}
+
+.sharedBlock {
+    .fr-grid-row {
+        background: var(--background-contrast-grey);
+    }
+    ul li {
+        a {
+            background-image: none;
+
+            &:first-child {
+                width: 8em;
+            }
+        }
+
+        [target='_blank']::after {
+            content: none;
+        }
+    }
+    @media screen and (min-width: $MEDIUM-MAX) {
+        position: absolute;
+        bottom: 0;
+    }
+    a span {
+        color: var(--text-action-high-blue-france);
+    }
+    .fr-grid-row:first-child {
+        border-bottom: 1px solid #fff;
+        p {
+            font-weight: bold;
+            span {
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $MEDIUM-MAX) {
+    .centerContent {
+        min-height: 1000px;
+    }
+}

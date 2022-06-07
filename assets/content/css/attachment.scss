@@ -1,0 +1,19 @@
+.attachment {
+    .fr-card__link {
+        font-size: 1rem;
+        line-height: 1.5;
+
+        &::after {
+            content: none;
+        }
+    }
+
+    .fr-card__desc {
+        margin-bottom: 0.5rem;
+    }
+
+    .attachment--extension {
+        display: flex;
+        justify-content: space-between;
+    }
+}

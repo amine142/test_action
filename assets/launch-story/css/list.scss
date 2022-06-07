@@ -1,0 +1,115 @@
+.fr-card {
+    &:not(.fr-card--no-arrow) .fr-card__body:after {
+        font-size: 1rem;
+        text-align: right;
+        height: auto;
+    }
+
+    .fr-card__header {
+        position: relative;
+        width: 100%;
+        height: 92px;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0.75rem;
+            left: 50%;
+            margin-left: -100%;
+            height: 200%;
+            border-radius: 0 0 70% 70%;
+            background-image: linear-gradient(106deg, #1d2b29, #466964);
+            padding: 0;
+            width: 200%;
+        }
+    }
+    .fr-card__title {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .fr-card__detail {
+        order: -1;
+        .fr-tag {
+            background-color: transparent;
+            border: solid 1px var(--border-default-grey);
+        }
+    }
+    .fr-card__region {
+        margin-top: auto;
+        color: var(--text-active-blue-france);
+        line-height: 0 !important;
+        img {
+            position: relative;
+            top: 2px;
+        }
+    }
+    .fr-card__img {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        border: 0.25rem solid #fff;
+        overflow: hidden;
+        margin: 1.5rem 0 0 1.5rem;
+
+        &:before {
+            content: none;
+        }
+    }
+}
+
+.no-result {
+    margin: auto;
+    p {
+        color: var(---text-mention-grey) !important;
+    }
+}
+
+.fr-rebound {
+    background-color: var(--background-alt-brown-cafe-creme);
+
+    .fr-tile--horizontal .fr-tile__body {
+        margin: 1rem 1rem 1.25rem;
+    }
+
+    .fr-tile--horizontal .fr-tile__img {
+        width: 3rem;
+        height: 3rem;
+        margin: 1rem 0 1.25rem 1rem;
+    }
+}
+
+@media screen and (max-width:#{$MEDIUM-MAX}) {
+    .fr-tag {
+        order: -1;
+    }
+
+    .title-head {
+        z-index: 1;
+        background-color: var(--background-default-grey);
+        padding: 0 1rem;
+        margin: -3rem -1rem 0;
+        border-radius: 24px 24px 0 0;
+        &:before {
+            width: 40px;
+            height: 4px;
+            background-color: var(--grey-850-200);
+            border-radius: 2px;
+            display: block;
+            margin: 0.75rem auto 0;
+            content: '';
+        }
+    }
+    .cardsContainer,
+    .pagerContent {
+        background-color: var(--background-default-grey);
+        z-index: 1;
+    }
+    .cardsContainer,
+    .fr-rebound {
+        z-index: 1;
+        margin-right: -1rem;
+        margin-left: -1rem;
+        padding: 0 1rem;
+    }
+}

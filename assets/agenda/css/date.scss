@@ -1,0 +1,219 @@
+:root {
+    --duet-color-primary: var(--text-active-blue-france);
+    --duet-color-text: $greyDark;
+    --duet-color-text-active: #fff;
+    --duet-color-placeholder: $greyDark;
+    --duet-color-button: var(--text-mention-grey);
+    --duet-color-surface: #fff;
+    --duet-color-overlay: rgba(0, 0, 0, 0.8);
+    --duet-color-border: var(--border-default-grey);
+    --duet-font-normal: 400;
+    --duet-font-bold: 600;
+    --duet-z-index: 600;
+}
+
+.duet-date__toggle {
+    box-shadow: none;
+    background-color: transparent;
+    height: 100%;
+    width: 36px;
+    background: url('../../images/common/calendar-line.svg') no-repeat right
+        10px center transparent !important;
+    .duet-date__toggle-icon {
+        display: none;
+    }
+}
+
+.duet-date__nav {
+    button {
+        border-radius: 0;
+        background: transparent;
+    }
+}
+
+.duet-date__select {
+    margin-right: 4px;
+    select:focus + .duet-date__select-label {
+        box-shadow: 0 0 0 2px $FOCUS-OUTLINE-COLOR;
+    }
+    span {
+        margin-right: 0;
+    }
+}
+
+.duet-date__toggle:focus-visible,
+.duet-date__toggle:focus {
+    box-shadow: 0 0 0 2px $FOCUS-OUTLINE-COLOR;
+}
+
+.duet-date__day.is-outside {
+    background: none;
+    color: $greyLight;
+    opacity: 0.6 !important;
+}
+
+.duet-date__mobile {
+    top: auto;
+    right: 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+.duet-date__close {
+    border-radius: 0;
+    display: none;
+    &:focus {
+        box-shadow: 0 0 0 1px var(--duet-color-primary);
+        background: var(--background-default-grey);
+    }
+}
+
+.duet-date__dialog {
+    min-width: 280px;
+    left: -14px;
+    .duet-date__table {
+        thead {
+            background-color: var(--background-contrast-grey);
+            padding: 10px 0;
+            th:first-child {
+                padding-left: 10px;
+            }
+            th:last-child {
+                padding-right: 10px;
+            }
+        }
+        tbody .duet-date__row {
+            td:first-child {
+                padding-left: 10px;
+            }
+            td:last-child {
+                padding-right: 10px;
+            }
+            &:first-child td {
+                padding-top: 15px;
+            }
+            &:last-child td {
+                padding-bottom: 15px;
+            }
+        }
+    }
+    .duet-date__header {
+        display: block;
+        text-align: center;
+        background-color: var(--background-contrast-grey);
+        margin: 0;
+        padding: 10px 0;
+        .duet-date__nav {
+            justify-content: space-between;
+            display: flex;
+            margin-top: -28px;
+            padding: 0 10px;
+            .duet-date__prev,
+            .duet-date__next {
+                margin: 0;
+                &:focus {
+                    box-shadow: 0 0 0 2px $FOCUS-OUTLINE-COLOR;
+                }
+            }
+        }
+        .duet-date__select-label {
+            font-size: 16px;
+            padding: 2px;
+            svg {
+                display: none;
+            }
+        }
+    }
+    .duet-date__table-header {
+        padding-bottom: 15px;
+        span:first-child {
+            text-transform: lowercase;
+            font-weight: normal;
+        }
+    }
+    .duet-date__dialog-content {
+        margin: 5px 10px 0;
+        padding: 0;
+        min-width: 0;
+        max-width: none;
+    }
+    .duet-date__day {
+        border-radius: 0;
+        width: 100%;
+        height: 29px;
+        width: 29px;
+        cursor: pointer;
+        &:focus {
+            box-shadow: 0 0 0 2px $FOCUS-OUTLINE-COLOR !important;
+            background-color: transparent;
+            span {
+                color: $greyDark !important;
+                &:hover {
+                    color: var(--text-inverted-grey) !important;
+                }
+            }
+            &:hover {
+                span {
+                    color: var(--text-inverted-grey) !important;
+                }
+            }
+        }
+        &:not(.is-month) {
+            color: $greyLight;
+            opacity: 1;
+        }
+        &:hover {
+            background-color: var(--background-active-blue-france);
+            color: var(--text-inverted-grey) !important;
+            &:focus {
+                color: var(--text-inverted-grey) !important;
+            }
+        }
+        &:before {
+            display: none;
+        }
+        &.is-today {
+            box-shadow: none;
+            border-bottom: 1px solid var(--border-default-grey);
+            &:hover span {
+                color: var(--text-inverted-grey);
+            }
+            span {
+                color: var(--text-active-blue-france);
+            }
+            &[aria-pressed='true'] {
+                span {
+                    color: var(--text-inverted-grey);
+                }
+            }
+            &:before {
+                border-radius: 0;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $MEDIUM-MAX) {
+    .duet-date__dialog-content {
+        min-height: 0;
+        margin: 0 !important;
+    }
+    .duet-date__dialog {
+        left: 0;
+    }
+    .duet-date__dialog .duet-date__day {
+        height: 50px;
+        width: 50px;
+    }
+    .duet-date__close {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: $SMALL-MAX) {
+    .duet-date__dialog .duet-date__day {
+        height: 40px;
+        width: 40px;
+    }
+}
