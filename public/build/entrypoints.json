@@ -1,0 +1,157 @@
+{
+  "entrypoints": {
+    "ds-module": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_gouvfr_dsfr_dist_dsfr_dsfr_module_min_js.js",
+        "/build/ds-module.js"
+      ]
+    },
+    "ds-nomodule": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_gouvfr_dsfr_dist_dsfr_dsfr_nomodule_min_js.js",
+        "/build/ds-nomodule.js"
+      ]
+    },
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_filter_js-node_modules_core-js_modules_es_array-ec0184.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/vendors-node_modules_core-js_modules_es_array_filter_js-node_modules_core-js_modules_es_array-ec0184.css",
+        "/build/app.css"
+      ]
+    },
+    "launch-story-list": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_filter_js-node_modules_core-js_modules_es_array-60d642.js",
+        "/build/vendors-node_modules_axios_index_js-node_modules_regenerator-runtime_runtime_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_map_js-node_modules_core-js_modules_web_timers_-b460de.js",
+        "/build/vendors-node_modules_tarekraafat_autocomplete_js_dist_autoComplete_js-node_modules_core-js_mo-a5b30c.js",
+        "/build/assets_app_js_Map_Osm_js.js",
+        "/build/launch-story-list.js"
+      ],
+      "css": [
+        "/build/launch-story-list.css"
+      ]
+    },
+    "covid-dashboard": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/covid-dashboard.js"
+      ],
+      "css": [
+        "/build/covid-dashboard.css"
+      ]
+    },
+    "agenda": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_filter_js-node_modules_core-js_modules_es_array-60d642.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_define-properties_js-node_modules_core-js_modu-292aad.js",
+        "/build/vendors-node_modules_axios_index_js-node_modules_regenerator-runtime_runtime_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_map_js-node_modules_core-js_modules_web_timers_-b460de.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-07ea76.js",
+        "/build/vendors-node_modules_duetds_date-picker_custom-element_index_js-node_modules_core-js_modules_-ff87da.js",
+        "/build/assets_app_js_AtTags_js-assets_app_js_Constants_js-node_modules_moment_locale_sync_recursive_.js",
+        "/build/assets_app_js_Map_Osm_js.js",
+        "/build/agenda.js"
+      ],
+      "css": [
+        "/build/agenda.css"
+      ]
+    },
+    "launch-story-view": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_filter_js-node_modules_core-js_modules_es_array-60d642.js",
+        "/build/vendors-node_modules_axios_index_js-node_modules_regenerator-runtime_runtime_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_map_js-node_modules_core-js_modules_web_timers_-b460de.js",
+        "/build/assets_app_js_Map_Osm_js.js",
+        "/build/launch-story-view.js"
+      ],
+      "css": [
+        "/build/launch-story-view.css"
+      ]
+    },
+    "360-pages": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-4575cb.js",
+        "/build/360-pages.js"
+      ],
+      "css": [
+        "/build/360-pages.css"
+      ]
+    },
+    "content-long-article-view": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_define-properties_js-node_modules_core-js_modu-292aad.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-4575cb.js",
+        "/build/assets_app_js_AtTags_js-assets_app_js_Constants_js-node_modules_moment_locale_sync_recursive_.js",
+        "/build/content-long-article-view.js"
+      ],
+      "css": [
+        "/build/content-long-article-view.css"
+      ]
+    },
+    "content": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_define-properties_js-node_modules_core-js_modu-292aad.js",
+        "/build/assets_app_js_AtTags_js-assets_app_js_Constants_js-node_modules_moment_locale_sync_recursive_.js",
+        "/build/content.js"
+      ],
+      "css": [
+        "/build/content.css"
+      ]
+    },
+    "content-list": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_filter_js-node_modules_core-js_modules_es_array-60d642.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_define-properties_js-node_modules_core-js_modu-292aad.js",
+        "/build/vendors-node_modules_axios_index_js-node_modules_regenerator-runtime_runtime_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-853eca.js",
+        "/build/assets_app_js_AtTags_js-assets_app_js_Constants_js-node_modules_moment_locale_sync_recursive_.js",
+        "/build/content-list.js"
+      ],
+      "css": [
+        "/build/content-list.css"
+      ]
+    },
+    "simulator": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_filter_js-node_modules_core-js_modules_es_array-60d642.js",
+        "/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-07ea76.js",
+        "/build/vendors-node_modules_core-js_modules_es_array-buffer_constructor_js-node_modules_core-js_modu-9ef4f9.js",
+        "/build/simulator.js"
+      ]
+    },
+    "indexAT": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--b791ff.js",
+        "/build/indexAT.js"
+      ]
+    }
+  }
+}
