@@ -37,4 +37,4 @@ jobs:
         mkdir -p data
         touch data/database.sqlite
     - name: create artifact 
-      run: cd $PWD && tar -czvf test.tar.gz .
+      run: cd $PWD && ls -la
