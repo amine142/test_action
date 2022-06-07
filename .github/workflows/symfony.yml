@@ -36,3 +36,5 @@ jobs:
       run: |
         mkdir -p data
         touch data/database.sqlite
+    - name: create artifact 
+      run: ls -la
