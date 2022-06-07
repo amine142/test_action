@@ -41,7 +41,7 @@ jobs:
         mkdir -p data
         touch data/database.sqlite
     - name: Tar files
-      run: tar -cvf my_files.tar . --exclude=.github/ --exclude=.git/ --exclude=.gitignore --exclude=composer.lock --exclude=composer.json 
+      run: tar -cvf my_files.tar . --exclude=.github/ --exclude=.git/ --exclude=.gitignore --exclude=composer.lock --exclude=composer.json --exclude=node_modules/
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
