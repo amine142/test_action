@@ -43,7 +43,7 @@ jobs:
         mkdir -p data
         touch data/database.sqlite
     - name: Tar files
-      run: tar -zvcf myfiles-$(date +"%Y-%m-%d").tar.gz --warning=no-file-changed  --exclude="./.git"  --exclude="./node_modules" --exclude="./var" --exclude="./.github" --exclude="./*.json" --exclude="./*.lock" --exclude="./myfiles-*.tar.gz" --exclude="./*.js" .
+      run: tar -zvcf ../myfiles-$(date +"%Y-%m-%d").tar.gz --warning=no-file-changed  --exclude="./.git"  --exclude="./node_modules" --exclude="./var" --exclude="./.github" --exclude="./*.json" --exclude="./*.lock" --exclude="./myfiles-*.tar.gz" --exclude="./*.js" ./*
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
