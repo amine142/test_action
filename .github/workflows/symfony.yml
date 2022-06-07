@@ -1,6 +1,6 @@
 name: Symfony
 env:
-  ARTIFACT_FILE: myfiles.tar.gz
+  ARTIFACT_FILE: myfiles-$(date '%Y-%m-%d').tar.gz
 on:
   push:
     branches: [ "master" ]
