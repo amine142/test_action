@@ -45,11 +45,10 @@ jobs:
         touch data/database.sqlite
     - name: Tar files
       run:  |
-         tar -zvcf ../${{ env.ARTIFACT_FILE }} --warning=no-file-changed  --exclude="./.git"  --exclude="./node_modules" --exclude="./var" --exclude="./.github" --exclude="./*.json" --exclude="./*.lock" --exclude="./myfiles-*.tar.gz" --exclude="./*.js" ./*
-         mv ../${{ env.ARTIFACT_FILE }} ./${{ env.ARTIFACT_FILE }}
+         tar -zvcf ./${{ env.ARTIFACT_FILE }} --warning=no-file-changed  --exclude="./.git"  --exclude="./node_modules" --exclude="./var" --exclude="./.github" --exclude="./*.json" --exclude="./*.lock" --exclude="./myfiles-*.tar.gz" --exclude="./*.js" ./*
          ls -la
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: ${{ github.workspace }}/../${{ env.ARTIFACT_FILE }}
+        path: ${{ env.ARTIFACT_FILE }}
