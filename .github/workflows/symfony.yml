@@ -42,4 +42,8 @@ jobs:
           name: dist-without-markdown
           path: |
             .
-            !.git/**/
+            !.git/ 
+            !.gitignore
+            !composer.lock
+            !composer.json
+            !symfony.lock
