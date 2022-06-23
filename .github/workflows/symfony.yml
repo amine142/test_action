@@ -9,10 +9,21 @@ on:
 
 permissions:
   contents: read
-
+   
 jobs:
   symfony-tests:
     runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:latest
+        ports:
+          - 3306
+        env:
+          MYSQL_USER: root
+          MYSQL_PASSWORD: example
+          MYSQL_DATABASE: strapi
+          MYSQL_ROOT_PASSWORD: password
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
     steps:
     #  To automatically get bug fixes and new Php versions for shivammathur/setup-php,
     # change this to (see https://github.com/shivammathur/setup-php#bookmark-versioning):
@@ -53,3 +64,10 @@ jobs:
       with:
         name: my-artifact
         path: artifact/*
+    - name: Verify MariaDB connection
+      env:
+          PORT: ${{ job.services.mariadb.ports[3306] }}
+      run: |
+          while ! mysqladmin ping -h"127.0.0.1" -P"$PORT" --silent; do
+            sleep 1
+          done   
